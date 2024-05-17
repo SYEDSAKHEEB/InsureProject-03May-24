@@ -9,7 +9,7 @@ pipeline {
     stage('CheckOut') {
       steps {
         echo 'Checkout the source code from GitHub'
-        git branch: 'main', url: 'https://github.com/smrakesh/InsureProject-03May-24.git'
+        git branch: 'main', url: 'https://github.com/SYEDSAKHEEB/InsureProject-03May-24.git'
             }
     }
      stage('Package') {
@@ -27,7 +27,7 @@ pipeline {
        stage('Create Docker Image using package') {
       steps {
         echo 'Create a Docker Image'
-        sh 'docker build -t smrakesh/insure-me-03may:1.0 .'
+        sh 'docker build -t SYEDSAKHEEB/insure-me-03may:1.0 .'
             }
       }
        stage('Docker Login') {
