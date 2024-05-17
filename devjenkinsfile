@@ -44,6 +44,12 @@ pipeline {
         sh 'docker push smrnb0724/insure-me-app:2.0'
                    }
             }
+      stage('deploy using ansible')
+       steps {
+        ansiblePlaybook credentialsId: 'ssh-user', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible.yml', vaultTmpPath: ''
       }
+    }
+  }
 }
+
 
